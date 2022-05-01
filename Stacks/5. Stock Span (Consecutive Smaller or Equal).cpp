@@ -1,5 +1,7 @@
 // https://practice.geeksforgeeks.org/problems/stock-span-problem-1587115621/1/
 
+// Stcok Span = index - Nearest Greater to left index
+
 vector <int> calculateSpan(int price[], int n){
        // Your code here
        stack<pair<int, int>> st;
