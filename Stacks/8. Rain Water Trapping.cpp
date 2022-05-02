@@ -10,8 +10,7 @@ int trap(vector<int>& height) {
             b[n-1-i] = i == 0 ? height[n-1-i] : max(height[n-1-i], b[n-i]);
         }
         for(int i = 0; i<n; i++){
-            int z = min(a[i], b[i]);
-            ans+= (height[i]<z ? z-height[i] : 0);
+            ans+= min(a[i], b[i]) - height[i];
         }
         return ans;
 }
