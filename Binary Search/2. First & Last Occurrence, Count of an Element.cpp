@@ -16,6 +16,13 @@ int firstAndLastOccurrence(vector<int>& v, int i, int target){
     return ans;
 }
 
+int count(vector<int>& v, int target){
+    int x = firstAndLastOccurrence(v, 1, target);
+    if(x == -1) return 0;
+    int y = firstAndLastOccurrence(v, 2, target);
+    return y-x+1;
+}
+
 int main(){
     
     int n;
@@ -26,6 +33,8 @@ int main(){
     cout << "1. First Occurrence : \n2.Second Occurrence : \n";
     int i, target;
     cin >> i >> target;
-    cout << firstAndLastOccurrence(v, i, target);
+    cout << firstAndLastOccurrence(v, i, target) << endl;
+    
+    cout << "Count of " << target << " : " << count(v, target) << endl;
     
 }
